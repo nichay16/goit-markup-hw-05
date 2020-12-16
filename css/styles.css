@@ -527,7 +527,6 @@ button {
     font-size: 16px;
     line-height: 1.186;
     text-align: center;
-    text-transform: uppercase;
     color: var(--title-text-color);
     margin-bottom: 10px;
 }
@@ -563,19 +562,23 @@ button {
     border-radius: 22px;
     width: 44px;
     height: 44px;
-    transition: background-color var(--duration-animation) var(--timing-animation),
-    fill var(--duration-animation) var(--timing-animation);
+    transform: scale(1);
+    transition: fill var(--duration-animation) var(--timing-animation),
+    transform var(--duration-animation) var(--timing-animation), 
+    border-color var(--duration-animation) var(--timing-animation);
 }
 
 .socials:hover,
 .socials:focus {
     background-color: var(--accent-color);
     fill: var(--background-color-white);
+    transform: scale(1.2);
 }
 
 .socials--dark:hover {
     background-color: var(--accent-color);
     fill: var(--background-color-white);
+    transform: scale(1.2);
 }
 
 .socials--dark {
@@ -584,6 +587,10 @@ button {
     border-radius: 22px;
     width: 44px;
     height: 44px;
+    transform: scale(1);
+    transition: fill var(--duration-animation) var(--timing-animation),
+    transform var(--duration-animation) var(--timing-animation), 
+    border-color var(--duration-animation) var(--timing-animation);
 }
 
 .socials__icon {
@@ -730,6 +737,10 @@ button {
     text-transform: uppercase;
     color: var(--primary-white-color);
 }
+
+.footer--baseline {
+    align-items: baseline;
+}
 /** ----------------------------------------- */
 
 /* ! ========================PORTFOLIO========================= */
@@ -871,14 +882,10 @@ button {
     position: fixed;
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100%;
-
     opacity: 1;
-
     background-color: var(--backdrop);
-
     transition: opacity var(--duration-animation) var(--timing-animation);
 }
 
@@ -886,14 +893,10 @@ button {
     position: absolute;
     top: 221px;
     left: 50%;
-
     width: 530px;
     height: 580px;
-
     background-color: var(--background-color-white);
-
     transform: translateX(-50%) scale(1);
-
     transition: transform var(--duration-animation) var(--timing-animation);
 }
 
@@ -901,21 +904,16 @@ button {
     position: absolute;
     top: 8px;
     right: 8px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 30px;
     height: 30px;
-
     padding: 0;
-
     border: 1px solid var(--color-border-close);
     border-radius: 50%;
     background-color: var(--background-color-white);
     outline: 0;
-
     cursor: pointer;
 }
 
@@ -923,10 +921,8 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 11px;
     height: 11px;
-
     fill: var(--title-text-color);
 }
 
