@@ -265,7 +265,10 @@ button {
 .address-list__item {
     display: flex;
     align-items: center;
-    
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.142;
+    letter-spacing: 0.02em;  
 }
 
 .contact-item {
@@ -848,6 +851,8 @@ button {
 
 .card-content__filter {
     padding: 20px;
+    border: 1px solid #EEEEEE;
+    border-top: none;
 }
 
 .card__link:hover,
@@ -920,23 +925,42 @@ button {
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 1;
     background-color: var(--backdrop);
     transition: opacity var(--duration-animation) var(--timing-animation);
 }
 
 .modal {
     position: absolute;
-    top: 221px;
+    top: 50%;
     left: 50%;
     width: 530px;
-    height: 580px;
+    min-height: 580px;
+    border-radius: 4px;
     background-color: var(--background-color-white);
-    transform: translateX(-50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
     transition: transform var(--duration-animation) var(--timing-animation);
 }
 
-.close-block {
+.modal-button {
+    min-width: 200px;
+    height: 50px;
+    padding: 10px 32px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border: none;
+    border-radius: 4px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.875;
+    text-align: center;
+    letter-spacing: 0.06em;
+
+    color: var(--primary-white-color);
+    background-color: var(--accent-color);
+    cursor: pointer;
+}
+
+.close-btn {
     position: absolute;
     top: 8px;
     right: 8px;
@@ -945,28 +969,18 @@ button {
     justify-content: center;
     width: 30px;
     height: 30px;
-    padding: 0;
     border: 1px solid var(--color-border-close);
     border-radius: 50%;
     background-color: var(--background-color-white);
-    outline: 0;
     cursor: pointer;
-}
-
-.icon-close {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 11px;
-    height: 11px;
-    fill: var(--title-text-color);
 }
 
 .backdrop.is-hidden {
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
 }
 
 .backdrop.is-hidden .modal {
-    transform: translateX(-50%) scale(0.5);
+    transform: translate(-50%, -50%) scale(0);
 }
